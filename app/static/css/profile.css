@@ -1,0 +1,25 @@
+.avatar {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+}
+
+#answer-display {
+	display: none;
+	margin-top: 20px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	width: 100%;
+	max-width: 600px;
+	text-align: center;
+	color: #000;
+}
+.history-list {
+	max-height: 200px;
+	overflow-y: auto;
+}

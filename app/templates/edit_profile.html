@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+    <div class="container is-flex is-flex-direction-column is-align-items-center mt-5">
+        <div class="box p-5" style="width: 50%; max-width: 600px;">
+            <h1 class="title is-3">Edit Profile</h1>
+            <form action="{{ url_for('post_edit_profile') }}" method="post" enctype="multipart/form-data">
+                <div class="field">
+                    <label class="label" for="username">Username:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="username" name="username" value="{{ user['username'] }}" required>
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label" for="password">Password:</label>
+                    <div class="control">
+                        <input class="input" type="password" id="password" name="password" required>
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <label class="label" for="photo">Profile Photo:</label>
+                    <div class="control">
+                        <input class="input" type="url" id="photo" name="photo" placeholder="Enter URL">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="description">Profile Description:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="description" name="description">
+                    </div>
+                </div>
+                
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" type="submit">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

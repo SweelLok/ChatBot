@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+<link rel="stylesheet" href="../static/css/chat.css">
+
+<div class="container is-flex is-flex-direction-column is-align-items-center mt-5">
+    <div class="box chat-box p-5" style="width: 50%; max-width: 600px; height: 400px; overflow-y: auto;">
+        {% if chat_history %}
+            {% for message in chat_history %}
+                <div class="notification is-link is-light mb-2">{{ message.name }}</div>
+                <div class="notification is-primary is-light mb-4">{{ message.answer }}</div>
+            {% endfor %}
+        {% else %}
+            <div class="notification is-warning is-light mb-2">Chat history is cleared.</div>
+        {% endif %}
+    </div>
+    
+    <div class="box p-4" style="width: 50%; max-width: 600px;">
+        <form method="post" action="{{ url_for('chat') }}" class="mb-3">
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <input placeholder="Ask anything" type="text" class="input" name="user_input">
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-info">Send</button>
+                </div>
+            </div>
+        </form>
+        
+        <form method="post" action="{{ url_for('chat') }}">
+            <input type="hidden" name="clear" value="true">
+            <button type="submit" class="button is-danger is-fullwidth">Clear History</button>
+        </form>
+    </div>
+</div>

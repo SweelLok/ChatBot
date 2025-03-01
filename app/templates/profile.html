@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <script src="../static/js/answer.js"></script>
+</head>
+<body>
+    <div class="container is-flex is-flex-direction-column is-align-items-center mt-5">
+        <div class="box p-5" style="width: 50%; max-width: 600px;">
+            <h1 class="title is-3">Profile</h1>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Description:</strong> {{ profile.description }}</p>
+            <p><img src="{{ profile.photo }}" alt="User Photo" class="avatar"></p>
+        </div>
+
+        {% if history %}
+            <div class="box p-5 mt-4" style="width: 50%; max-width: 600px;">
+                <p class="title is-4">History:</p>
+                <ul class="history-list">
+                    {% for item in history %}
+                        {% if item.name %}
+                            <li class="mb-2">
+                                <button class="button is-link is-light" onclick="showAnswer('{{ item.answer }}')">{{ item.name }}</button>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <div id="answer-display" class="mt-4"></div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
