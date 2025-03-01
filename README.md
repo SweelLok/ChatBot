@@ -59,8 +59,9 @@ SQLite3 (built-in with Python)
 
 ## Contribution
 If you want to contribute, feel free to open a pull request or submit an issue.
-Write to the mail: ukr.vadya@gmail.com 
-Or whrite on telegram: https://t.me/Vadym7584241212332
+**My contacts**
+- Mail: ukr.vadya@gmail.com 
+- Telegram: https://t.me/Vadym7584241212332
 
 ## License
 This project is licensed under the MIT License.
