@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+{% extends "base.html" %}
+
+{% block head %}
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-</head>
-<body>
+
+{% endblock %}
+
+{% block content %}
+
     <div class="container is-flex is-flex-direction-column is-align-items-center mt-5">
         <div class="box p-5" style="width: 50%; max-width: 600px;">
             <h1 class="title is-3">Edit Profile</h1>
@@ -45,7 +46,15 @@
                     </div>
                 </div>
             </form>
+
+            <form action="{{ url_for('post_delete_profile') }}" method="post" class="mt-4">
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-danger is-fullwidth" type="submit">Delete Account</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</body>
-</html>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/css/style.css" rel="stylesheet">
+	<script src="../static/js/style.js"></script>
+  <title>{% block title%}{% endblock title %}</title>
+  {% block head %}{% endblock head %}
+</head>
+<body>
+
+	{% block navbar %}
+
+    <div id="menuBtn" onclick="openNav()">&#9776; Menu</div>
+
+    <div id="myNavbar" class="navbar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{{ url_for('chat') }}">Chat</a>
+        <a href="{{ url_for('get_about') }}">About</a>
+				<a href="{{ url_for('get_profile_page') }}">Profile</a>
+				<a href="{{ url_for('get_logout') }}">Logout</a>
+    </div>
+
+	{% endblock %}
+
+    <div id="main">
+				{% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

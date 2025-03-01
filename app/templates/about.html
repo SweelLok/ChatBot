@@ -1,17 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+{% extends "base.html" %}
+
+{% block head %}
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-</head>
-<body>
+
+{% endblock %}
+
+{% block content %}
+
     <div class="container is-flex is-flex-direction-column is-align-items-center mt-5">
-        <div class="box p-5" style="width: 50%; max-width: 600px;">
+        <div class="box p-5" style="width: 50%; max-width: 600px; margin-top: -125px;">
             <h1 class="title is-3">About</h1>
-            <p>This is an AI-powered chat application built using Flask. The project allows users to interact with an AI chatbot, save chat history, and manage their profiles.</p>
+            <p>This is an Emulator of AI-powered chat application built using Flask. The project allows users to interact with an AI chatbot, save chat history, and manage their profiles.</p>
         </div>
     </div>
-</body>
-</html>
+
+    <div class="container is-flex is-flex-direction-column is-align-items-center mt-5">
+        <div class="box p-5" style="width: 50%; max-width: 600px;">
+            <h1 class="title is-3">Contact Us</h1>
+            <p>If you have any questions or feedback, feel free to reach out to us:</p>
+            <ul>
+                <li>Email: ukr.vadya@gmail.com</li>
+                <li>Phone: +380995329221</li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

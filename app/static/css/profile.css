@@ -19,6 +19,7 @@
 	text-align: center;
 	color: #000;
 }
+
 .history-list {
 	max-height: 200px;
 	overflow-y: auto;

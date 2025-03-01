@@ -30,9 +30,10 @@ def chat():
         return redirect(url_for("chat"))
 
     chat_history = get_chat_history(current_user.user_id)
-    if session.get("chat_cleared"):
+    cleared = session.get("chat_cleared", False)
+    if cleared:
         chat_history = []
-    return render_template("chat.html", chat_history=chat_history)
+    return render_template("chat.html", chat_history=chat_history, cleared=cleared)
 
 def get_bot_response(user_message):
     for question_answer_pair in answers["questions"]:
