@@ -21,6 +21,7 @@ def get_about():
 def chat():
     if request.method == "POST":
         if "clear" in request.form:
+            clear_chat_history(current_user.user_id)
             session["chat_cleared"] = True
             return redirect(url_for("chat"))
         user_message = request.form["user_input"]
@@ -56,3 +57,10 @@ def get_chat_history(user_id):
     chat_history = curs.fetchall()
     conn.close()
     return chat_history
+
+def clear_chat_history(user_id):
+    conn = get_db_connection()
+    curs = conn.cursor()
+    curs.execute("DELETE FROM history WHERE user_id = ?", (user_id,))
+    conn.commit()
+    conn.close()
